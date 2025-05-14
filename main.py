@@ -1,4 +1,36 @@
-Write Python code for both the Novel and Magazine classes modelled in the previous slide. Include a suitable constructor method which uses the Book constructor method. Instantiate 2 novels and 2 magazines and print their details.
-Create the Book class (plus methods and attributes)
-Create the Novel class that inherits from Book class.
-Create the Magazine class that inherits from Book class.
+class Book:
+    def __init__(self):
+        self.title = ""
+        self.author = "Me"
+        self.year = 2000
+        self.words = 1000
+        self.numPages = 300
+    
+    def displayDetails(self):
+        return f"""Title: {title}
+Author: {self.author}
+Year: {self.year}
+Number of Pages: {self.numPages}"""
+
+    def rateBook(rating):
+        self.rating = rating
+    
+    def reviewBook(self, review):
+        self.review = review
+
+class Novel(Book):
+    def __init__(self):
+        self.genre = "Crime Fiction"
+        self.numChapters = 20
+    
+    def calcReadTime(self, readSpeed):
+        return self.words * readSpeed
+
+class Magazine(Book):
+    def __init__(self):
+        self.issueNumber = 69
+        self.numArticles = 20
+        self.articles = {}
+    
+    def getArticleByTitle(self, title):
+        return self.articles[title]
