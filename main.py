@@ -1,10 +1,10 @@
 class Book:
-    def __init__(self):
-        self.title = ""
-        self.author = "Me"
-        self.year = 2000
-        self.words = 1000
-        self.numPages = 300
+    def __init__(self, title: str, author: str, year: int, words: int, numPages: int):
+        self.title = title
+        self.author = author
+        self.year = year
+        self.words = words
+        self.numPages = numPages
     
     def displayDetails(self):
         return f"""Title: {title}
@@ -19,18 +19,24 @@ Number of Pages: {self.numPages}"""
         self.review = review
 
 class Novel(Book):
-    def __init__(self):
-        self.genre = "Crime Fiction"
-        self.numChapters = 20
+    def __init__(self, title: str, author: str, year: int, words: int, numPages: int, genre: str, numChapters: int):
+        super().__init__(title, author, year, words, numPages)
+        self.genre = genre
+        self.numChapters = numChapters
     
     def calcReadTime(self, readSpeed):
         return self.words * readSpeed
 
 class Magazine(Book):
-    def __init__(self):
-        self.issueNumber = 69
-        self.numArticles = 20
+    def __init__(self, title: str, author: str, year: int, words: int, numPages: int, issueNumber: int, numArticles: int):
+        super().__init__(title, author, year, words, numPages)
+        self.issueNumber = issueNumber
+        self.numArticles = numArticles
         self.articles = {}
     
     def getArticleByTitle(self, title):
         return self.articles[title]
+
+biography = Book("Israel Irawan - An Autobiography", "Israel Irawan", 2025, 60000, 400)
+crime = Novel("The Tales of Detective Israel Irawan", "Israel Irawan", 2025, 60000, 400, "Crime Fiction", 20)
+daily = Magazine("Israel Irawan Daily", "Israel Irawan", 2025, 60000, 400, 142, 40)
