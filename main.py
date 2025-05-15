@@ -38,5 +38,8 @@ class Magazine(Book):
         return self.articles[title]
 
 biography = Book("Israel Irawan - An Autobiography", "Israel Irawan", 2025, 60000, 400)
+biography2 = Book("Israel Irawan - The Greatest Man Who Ever Lived", 2025, 60000, 400)
+mystery = Novel("The Mysterious Adventures of Israel Irawan", "Israel Irawan", 2025, 60000, 400, "Mystery", 20)
 crime = Novel("The Tales of Detective Israel Irawan", "Israel Irawan", 2025, 60000, 400, "Crime Fiction", 20)
 daily = Magazine("Israel Irawan Daily", "Israel Irawan", 2025, 60000, 400, 142, 40)
+lifestyle = Magazine("Lifestyle by Israel Irawan", "Israel Irawan", 2025, 60000, 400, 142, 40)
