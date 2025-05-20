@@ -27,6 +27,11 @@ class Novel(Book):
     def calcReadTime(self, readSpeed):
         return self.words * readSpeed
 
+    def displayDetails(self):  # Method override (Polymorphism)
+        print(f"{self.title} by {self.author}")
+        print(f"Genre: {self.genre}")
+        print(f"Chapters: {self.numChapters}")
+
 class Magazine(Book):
     def __init__(self, title: str, author: str, year: int, words: int, numPages: int, issueNumber: int, numArticles: int):
         super().__init__(title, author, year, words, numPages)
